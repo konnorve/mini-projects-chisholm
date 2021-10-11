@@ -8,10 +8,7 @@ from Bio import SeqIO, SeqUtils
 import gffpandas.gffpandas as gffpd
 
 # Parsons iMac path:
-diel_trained_proj_dir = Path(r'/Users/konnorvonemster/Dropbox (MIT)/Lab Member Files/Current Lab Members/Konnor von Emster/2021_trained_diel_RNAseq_project')
-
-# # macbook pro path:
-# diel_trained_proj_dir = Path(r'/Users/kve/Dropbox (MIT)/Lab Member Files/Current Lab Members/Konnor von Emster/2021_trained_diel_RNAseq_project')
+diel_trained_proj_dir = Path('/nobackup1/kve/2021_trained_diel_expression_vs_genome_location')
 
 trained_diel_df_path = diel_trained_proj_dir / 'proGeneCounts_darkAdaptedControl_vstNormalized.csv'
 
