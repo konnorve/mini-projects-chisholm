@@ -1,0 +1,452 @@
+/home/kve/bin/miniconda3/lib/python3.9/site-packages/seaborn/matrix.py:654: UserWarning: Clustering large matrix with scipy. Installing `fastcluster` may give better performance.
+  warnings.warn(msg)
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'
+Traceback (most recent call last):
+  File "/home/kve/bin/miniconda3/envs/gimme/bin/gimme", line 8, in <module>
+    from gimmemotifs.cli import cli
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/__init__.py", line 61, in <module>
+    from . import denovo      # noqa: F401
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/denovo.py", line 51, in <module>
+    from gimmemotifs.stats import calc_stats, rank_motifs, write_stats
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/stats.py", line 10, in <module>
+    from gimmemotifs.scanner import scan_to_best_match, Scanner
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/scanner.py", line 58, in <module>
+    config = MotifConfig()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 95, in __init__
+    self._upgrade_config()
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/site-packages/gimmemotifs/config.py", line 98, in _upgrade_config
+    if "width" in self.config["params"]:
+  File "/home/kve/bin/miniconda3/envs/gimme/lib/python3.9/configparser.py", line 963, in __getitem__
+    raise KeyError(key)
+KeyError: 'params'

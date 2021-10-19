@@ -26,7 +26,7 @@
 #SBATCH --mem 250000
 #
 # 9, 18, 39, 59
-#SBATCH --array=18,39,59
+#SBATCH --array=9,18,39,59
 #
 #SBATCH -o logs/%j_%a_slurm_output.txt
 #SBATCH -e logs/%j_%a_slurm_error.txt
