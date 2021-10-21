@@ -32,6 +32,5 @@
 #SBATCH -e logs/%j_%a_slurm_error.txt
 
 source activate base
-source activate gimme
 
 ~/bin/miniconda3/bin/python3 parental_control_LFC_clustering.py "/pool001/kve/2021_trained_diel_LFC_motif_search" ${SLURM_ARRAY_TASK_ID}
