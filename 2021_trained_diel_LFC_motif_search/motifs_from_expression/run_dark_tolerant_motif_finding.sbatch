@@ -31,6 +31,6 @@
 #SBATCH -o logs/%j_%a_slurm_output.txt
 #SBATCH -e logs/%j_%a_slurm_error.txt
 
-source activate base
+source activate 2021_trained_diel_LFC_motif_search
 
-~/bin/miniconda3/bin/python3 parental_control_LFC_clustering.py "/pool001/kve/2021_trained_diel_LFC_motif_search" ${SLURM_ARRAY_TASK_ID}
+python3 determine_dark_tolerant_motifs.py "/pool001/kve/2021_trained_diel_LFC_motif_search" ${SLURM_ARRAY_TASK_ID}

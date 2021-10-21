@@ -5,14 +5,15 @@ import matplotlib.patches as mpatches
 from matplotlib.patches import Circle
 import matplotlib.colors
 from pathlib import Path
-from Bio import SeqIO, SeqUtils
+from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 import gffpandas.gffpandas as gffpd
 import seaborn as sns
-import os, sys
+import time, sys
+from gimmemotifs.denovo import gimme_motifs
 
 from sklearn.cluster import KMeans, AgglomerativeClustering, SpectralClustering
-from sklearn.metrics import silhouette_samples, silhouette_score
+from sklearn.metrics import silhouette_score
 from sklearn.decomposition import PCA
 
 TRANSLATION_TABLE = 11
@@ -144,7 +145,7 @@ def best_clusters_silhouette(X, out_path):
 
 
 def run_gimme_motifs(target_fasta, output_dir, ref_genome_path):
-    pass
+    gimme_motifs(str(motif_fasta), str(n_cluster_motif_dir), params={"genome":genome_path})
 
 
 def main(proj_dir, num_clusters):
@@ -204,6 +205,9 @@ def main(proj_dir, num_clusters):
             n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
             n_clust_dir.mkdir(parents=True, exist_ok=True)
 
+            start_time = time.time()
+            print(f"cluster {cluster} started ")
+
             fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
 
             cluster_df = reference_df.loc[cluster]
@@ -213,7 +217,15 @@ def main(proj_dir, num_clusters):
             n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
             n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
 
-            run_gimme_motifs(fasta_out, n_cluster_motif_dir, proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna')
+            genome_path = proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna'
+
+            try:
+                gimme_motifs(str(fasta_out), str(n_cluster_motif_dir), params={"genome":str(genome_path)})
+            except:
+                pass
+            
+            td = time.time() - start_time
+            print(f"cluster {cluster} finished in {td // 60} minutes")
             
     
 
