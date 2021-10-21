@@ -144,9 +144,7 @@ def best_clusters_silhouette(X, out_path):
 
 
 def run_gimme_motifs(target_fasta, output_dir, ref_genome_path):
-    command = "gimme motifs {input_file} {output_dir} --denovo -g {genome_ref}".format(input_file=target_fasta, output_dir=output_dir, genome_ref=ref_genome_path)
-    os.system(command)
-    return True
+    pass
 
 
 def main(proj_dir, num_clusters):
@@ -182,8 +180,6 @@ def main(proj_dir, num_clusters):
     best_clusters_silhouette(X, silhouette_dir / 'ideal_clustering.png')
 
     # [9, 18, 39, 59]
-
-    # for num_clusters in [39, 59]:
     if num_clusters:
         
         clustering = clustering_analysis(X, num_clusters=num_clusters)
@@ -204,7 +200,7 @@ def main(proj_dir, num_clusters):
         plot_heatmap(results_df, heat_map / 'heat_map_{}.png'.format(num_clusters))
         reference_df.to_csv(dataframe_dir / '{}_clusters_reference_df.tsv'.format(num_clusters), sep='\t')
 
-        for cluster in labels:
+        for cluster in set(labels):
             n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
             n_clust_dir.mkdir(parents=True, exist_ok=True)
 
@@ -262,6 +258,6 @@ def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
     SeqIO.write(yfr_seq_records, fasta_outpath, "fasta")
 
 proj_dir = Path(sys.argv[1])
-num_clusters = int(Path(sys.argv[2]))
+num_clusters = int(sys.argv[2])
 
 main(proj_dir, num_clusters)
