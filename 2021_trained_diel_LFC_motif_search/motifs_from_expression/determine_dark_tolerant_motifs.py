@@ -271,6 +271,7 @@ def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
 
 proj_dir = Path(sys.argv[1])
 
-for num_clusters in [9,18,39,59]:
-    main(proj_dir, num_clusters)
+num_clusters = int(sys.argv[2])
+
+main(proj_dir, num_clusters)
 

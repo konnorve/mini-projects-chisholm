@@ -30,4 +30,10 @@
 
 source activate 2021_trained_diel_LFC_motif_search
 
-python3 determine_dark_tolerant_motifs.py "/pool001/kve/2021_trained_diel_LFC_motif_search"
+
+# 9, 18, 39, 59
+for num_clusters in 18 39 59
+do
+    rm -rf ~/.cache/gimmemotifs
+    python3 determine_dark_tolerant_motifs.py "/pool001/kve/2021_trained_diel_LFC_motif_search" $num_clusters
+done
