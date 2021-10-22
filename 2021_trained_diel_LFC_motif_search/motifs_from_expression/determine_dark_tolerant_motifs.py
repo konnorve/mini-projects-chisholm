@@ -206,7 +206,7 @@ def main(proj_dir, num_clusters):
             n_clust_dir.mkdir(parents=True, exist_ok=True)
 
             start_time = time.time()
-            print(f"cluster {cluster} started ")
+            print(f"cluster {cluster:02} started of {num_clusters:02}")
 
             fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
 
@@ -225,7 +225,7 @@ def main(proj_dir, num_clusters):
                 pass
             
             td = time.time() - start_time
-            print(f"cluster {cluster} finished in {td // 60} minutes")
+            print(f"cluster {cluster} finished of {num_clusters:02} in {td // 60} minutes")
             
     
 
@@ -270,6 +270,7 @@ def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
     SeqIO.write(yfr_seq_records, fasta_outpath, "fasta")
 
 proj_dir = Path(sys.argv[1])
-num_clusters = int(sys.argv[2])
 
-main(proj_dir, num_clusters)
+for num_clusters in [9,18,39,59]:
+    main(proj_dir, num_clusters)
+
