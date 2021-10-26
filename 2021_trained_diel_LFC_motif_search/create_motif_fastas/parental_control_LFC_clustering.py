@@ -9,7 +9,9 @@ from Bio import SeqIO, SeqUtils
 from Bio.SeqRecord import SeqRecord
 import gffpandas.gffpandas as gffpd
 import seaborn as sns
-import os, sys
+import os, sys, time, subprocess
+import concurrent.futures
+from multiprocessing import Pool
 
 from sklearn.cluster import KMeans, AgglomerativeClustering, SpectralClustering
 from sklearn.metrics import silhouette_samples, silhouette_score
@@ -146,7 +148,15 @@ def best_clusters_silhouette(X, out_path):
 
 
 def run_gimme_motifs(target_fasta, output_dir, ref_genome_path):
-    pass
+    # command = f"gimme motifs {target_fasta} {output_dir} --denovo -g {ref_genome_path}"
+    command = "gimme motifs {input_file} {output_dir} --denovo -g {genome_ref}".format(input_file=target_fasta, output_dir=output_dir, genome_ref=ref_genome_path)
+    os.system(command)
+
+    # command_list = ["gimme", "motifs", target_fasta, output_dir, "--denovo", "-g", ref_genome_path]
+    # run_gimme = subprocess.run(command_list, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # # print(run_gimme.stderr)
+
+    return True #run_gimme.returncode
 
 
 def main(proj_dir, num_clusters):
@@ -186,6 +196,7 @@ def main(proj_dir, num_clusters):
         
         clustering = clustering_analysis(X, num_clusters=num_clusters)
         labels = clustering.labels_
+        label_set = set(labels)
 
         reference_df = reference_df.reset_index()
         results_df = results_df.reset_index()
@@ -202,11 +213,15 @@ def main(proj_dir, num_clusters):
         plot_heatmap(results_df, heat_map / 'heat_map_{}.png'.format(num_clusters))
         reference_df.to_csv(dataframe_dir / '{}_clusters_reference_df.tsv'.format(num_clusters), sep='\t')
 
-        # for cluster in set(labels):
-        #     n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
-        #     n_clust_dir.mkdir(parents=True, exist_ok=True)
+        n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
+        n_clust_dir.mkdir(parents=True, exist_ok=True)
 
-        #     fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
+        def process_cluster(cluster):
+
+            start_time = time.time()
+            print(f"cluster {cluster} of {num_clusters} started")
+            
+            fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
 
         #     cluster_df = reference_df.loc[cluster]
 
@@ -215,10 +230,21 @@ def main(proj_dir, num_clusters):
         #     n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
         #     n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
 
-        #     run_gimme_motifs(fasta_out, n_cluster_motif_dir, proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna')
-            
-    
+            run_gimme_motifs(fasta_out, n_cluster_motif_dir, proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna')
 
+            td = time.time() - start_time
+
+            print(f"cluster {cluster} of {num_clusters} finished with analysis in {td} seconds")
+
+        print(label_set)
+
+        for label in label_set:
+            process_cluster(label)
+
+        # with concurrent.futures.ProcessPoolExecutor() as executor:
+        #     executor.map(process_cluster, label_set)
+        #     executor.shutdown()
+    
 def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
     yfr_seq_records = []
     
@@ -234,7 +260,7 @@ def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
             cds_sequence = cds_sequence.reverse_complement()
 
         # A good control I found was to translate the protein and observe if it made sense
-        protein_sequence = cds_sequence.translate(table=TRANSLATION_TABLE)
+        # protein_sequence = cds_sequence.translate(table=TRANSLATION_TABLE)
 
         promoter_start = promoter_stop = 0
 
@@ -259,7 +285,7 @@ def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
 
     SeqIO.write(yfr_seq_records, fasta_outpath, "fasta")
 
-proj_dir = Path(sys.argv[1])
-num_clusters = int(sys.argv[2])
-
-main(proj_dir, num_clusters)
+if __name__ == '__main__':
+    proj_dir = Path(sys.argv[1])
+    num_clusters = int(sys.argv[2])
+    main(proj_dir, num_clusters)
