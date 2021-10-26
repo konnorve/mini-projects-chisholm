@@ -210,7 +210,7 @@ def main(proj_dir, num_clusters):
 
     X = results_df.to_numpy()
 
-    # best_clusters_silhouette(X, silhouette_dir / 'ideal_clustering.png')
+    best_clusters_silhouette(X, silhouette_dir / 'ideal_clustering.png')
 
     # [9, 18, 39, 59]
     if num_clusters:
@@ -233,31 +233,31 @@ def main(proj_dir, num_clusters):
         plot_heatmap(results_df, heat_map / 'heat_map_{}.png'.format(num_clusters))
         reference_df.to_csv(dataframe_dir / '{}_clusters_reference_df.tsv'.format(num_clusters), sep='\t')
 
-        # for cluster in set(labels):
-        #     n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
-        #     n_clust_dir.mkdir(parents=True, exist_ok=True)
+        for cluster in set(labels):
+            n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
+            n_clust_dir.mkdir(parents=True, exist_ok=True)
 
-        #     start_time = time.time()
-        #     print(f"cluster {cluster:02} started of {num_clusters:02}")
+            start_time = time.time()
+            print(f"cluster {cluster:02} started of {num_clusters:02}")
 
-        #     fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
+            fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
 
-        #     cluster_df = reference_df.loc[cluster]
+            cluster_df = reference_df.loc[cluster]
 
-        #     savePromoterFasta(ref_genome_seq, cluster_df, fasta_out)
+            savePromoterFasta(ref_genome_seq, cluster_df, fasta_out)
 
-        #     n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
-        #     n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
+            n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
+            n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
 
-        #     genome_path = proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna'
+            genome_path = proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna'
 
-        #     try:
-        #         gimme_motifs(str(fasta_out), str(n_cluster_motif_dir), params={"genome":str(genome_path)})
-        #     except:
-        #         pass
+            try:
+                gimme_motifs(str(fasta_out), str(n_cluster_motif_dir), params={"genome":str(genome_path)})
+            except:
+                pass
             
-        #     td = time.time() - start_time
-        #     print(f"cluster {cluster} finished of {num_clusters:02} in {td // 60} minutes")
+            td = time.time() - start_time
+            print(f"cluster {cluster} finished of {num_clusters:02} in {td // 60} minutes")
             
     
 
@@ -301,10 +301,9 @@ def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
 
     SeqIO.write(yfr_seq_records, fasta_outpath, "fasta")
 
-# proj_dir = Path(sys.argv[1])
+proj_dir = Path(sys.argv[1])
 
-# num_clusters = int(sys.argv[2])
+num_clusters = int(sys.argv[2])
 
-for num_clusters in [9, 18, 39, 59]:
-    main(Path("/pool001/kve/2021_trained_diel_LFC_motif_search"), num_clusters)
+main(Path("/pool001/kve/2021_trained_diel_LFC_motif_search"), num_clusters)
 
