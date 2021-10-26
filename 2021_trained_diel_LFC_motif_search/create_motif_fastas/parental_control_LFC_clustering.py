@@ -84,12 +84,14 @@ def plot_diel_clusters(results_df, out_path, stacked=True):
             if i < len(unique_clusters):
                 cluster_df = results_df.loc[unique_clusters[i]]
                 cluster_arr = cluster_df.to_numpy()
+                print(cluster_arr)
                 for r in cluster_arr:
                     ax.plot(np.arange(len(r)), r, color=cmap(norm(unique_clusters[i])), label=unique_clusters[i], alpha=0.2)
                 x_ticks = list(results_df.columns)
                 ax.set_xticks(range(len(x_ticks)))
                 ax.set_xticklabels(x_ticks)
                 ax.set_ylim(min_lfc, max_lfc)
+
     
     plt.savefig(out_path)
     plt.close()
@@ -200,20 +202,20 @@ def main(proj_dir, num_clusters):
         plot_heatmap(results_df, heat_map / 'heat_map_{}.png'.format(num_clusters))
         reference_df.to_csv(dataframe_dir / '{}_clusters_reference_df.tsv'.format(num_clusters), sep='\t')
 
-        for cluster in set(labels):
-            n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
-            n_clust_dir.mkdir(parents=True, exist_ok=True)
+        # for cluster in set(labels):
+        #     n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
+        #     n_clust_dir.mkdir(parents=True, exist_ok=True)
 
-            fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
+        #     fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
 
-            cluster_df = reference_df.loc[cluster]
+        #     cluster_df = reference_df.loc[cluster]
 
-            savePromoterFasta(ref_genome_seq, cluster_df, fasta_out)
+        #     savePromoterFasta(ref_genome_seq, cluster_df, fasta_out)
 
-            n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
-            n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
+        #     n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
+        #     n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
 
-            run_gimme_motifs(fasta_out, n_cluster_motif_dir, proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna')
+        #     run_gimme_motifs(fasta_out, n_cluster_motif_dir, proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna')
             
     
 

@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from matplotlib.lines import Line2D
 from matplotlib.patches import Circle
 import matplotlib.colors
 from pathlib import Path
@@ -11,6 +12,8 @@ import gffpandas.gffpandas as gffpd
 import seaborn as sns
 import time, sys
 from gimmemotifs.denovo import gimme_motifs
+
+import scipy.stats as stats
 
 from sklearn.cluster import KMeans, AgglomerativeClustering, SpectralClustering
 from sklearn.metrics import silhouette_score
@@ -52,7 +55,7 @@ def clustering_analysis(X, num_clusters):
 def plot_diel_clusters(results_df, out_path, stacked=True):
 
     unique_clusters = results_df.index.get_level_values('cluster_label').unique()
-    num_clusters = len(unique_clusters)
+    num_clusters = len(unique_clusters) + 1
 
     if stacked:
         n_rows = 1
@@ -66,7 +69,7 @@ def plot_diel_clusters(results_df, out_path, stacked=True):
     norm = matplotlib.colors.Normalize(vmin=min(unique_clusters), vmax=max(unique_clusters))
 
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(6*n_cols, 4*n_rows))
-    plt.title('Layered Parental to Dark Adapted LFC Clusters ({} clusters)'.format(len(unique_clusters)))
+    fig.suptitle(f"LFC Between Parental and Dark Adapted Strains ({len(unique_clusters)} clusters)", size="xx-large")
 
     if stacked:
         ax = axes
@@ -83,14 +86,47 @@ def plot_diel_clusters(results_df, out_path, stacked=True):
         max_lfc = np.max(results_df.to_numpy())
         for i, ax in enumerate(axes.flat):
             if i < len(unique_clusters):
+                ax.set_title(f"Cluster {unique_clusters[i]}")
                 cluster_df = results_df.loc[unique_clusters[i]]
                 cluster_arr = cluster_df.to_numpy()
+                columns = list(results_df.columns)
+
+                x_points = np.arange(len(columns))
+
                 for r in cluster_arr:
-                    ax.plot(np.arange(len(r)), r, color=cmap(norm(unique_clusters[i])), label=unique_clusters[i], alpha=0.2)
-                x_ticks = list(results_df.columns)
-                ax.set_xticks(range(len(x_ticks)))
-                ax.set_xticklabels(x_ticks)
+                    ax.plot(x_points, r, color=cmap(norm(unique_clusters[i])), alpha=0.2)
+
+                sig_diffs = []
+                sig_LFCs = []
+                for col in columns:
+                    lfc_arr = cluster_df[col].to_numpy()
+                    avg = lfc_arr.mean()
+                    std = lfc_arr.std()
+                    z_val = abs(avg/std)
+                    p_val = stats.norm.sf(z_val)*2
+                    sig_diffs.append(p_val < 0.05)
+                    sig_LFCs.append(abs(avg) > 1)
+
+                y_range = max_lfc - min_lfc
+                
+                for x, sig_diff, sig_LFC in zip(x_points, sig_diffs, sig_LFCs):
+                    if sig_LFC:
+                        ax.plot(x, min_lfc + y_range*0.1, 'b*', label="Mean LFC > 1")
+                    if sig_diff:
+                        ax.plot(x, min_lfc + y_range*0.05, 'r*', label="DE cluster at 5% FDR")
+
+
+                ax.set_xticks(x_points)
+                ax.set_xticklabels(columns)
                 ax.set_ylim(min_lfc, max_lfc)
+            else:
+                if i == len(unique_clusters):
+                    legend_elements = [ Line2D([0], [0], marker='*', color='w', label="Mean LFC > 1", markerfacecolor='b', markersize=10),
+                                        Line2D([0], [0], marker='*', color='w', label="DE cluster at 5% FDR", markerfacecolor='r', markersize=10)]
+                    ax.legend(handles=legend_elements, loc=2)
+                    ax.set_axis_off()
+                else:
+                    fig.delaxes(ax)
     
     plt.savefig(out_path)
     plt.close()
@@ -144,10 +180,6 @@ def best_clusters_silhouette(X, out_path):
     plt.close()
 
 
-def run_gimme_motifs(target_fasta, output_dir, ref_genome_path):
-    gimme_motifs(str(motif_fasta), str(n_cluster_motif_dir), params={"genome":genome_path})
-
-
 def main(proj_dir, num_clusters):
 
     results_dir = proj_dir / 'results'
@@ -178,7 +210,7 @@ def main(proj_dir, num_clusters):
 
     X = results_df.to_numpy()
 
-    best_clusters_silhouette(X, silhouette_dir / 'ideal_clustering.png')
+    # best_clusters_silhouette(X, silhouette_dir / 'ideal_clustering.png')
 
     # [9, 18, 39, 59]
     if num_clusters:
@@ -201,31 +233,31 @@ def main(proj_dir, num_clusters):
         plot_heatmap(results_df, heat_map / 'heat_map_{}.png'.format(num_clusters))
         reference_df.to_csv(dataframe_dir / '{}_clusters_reference_df.tsv'.format(num_clusters), sep='\t')
 
-        for cluster in set(labels):
-            n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
-            n_clust_dir.mkdir(parents=True, exist_ok=True)
+        # for cluster in set(labels):
+        #     n_clust_dir = motif_fastas / '{:02}_clusters'.format(num_clusters)
+        #     n_clust_dir.mkdir(parents=True, exist_ok=True)
 
-            start_time = time.time()
-            print(f"cluster {cluster:02} started of {num_clusters:02}")
+        #     start_time = time.time()
+        #     print(f"cluster {cluster:02} started of {num_clusters:02}")
 
-            fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
+        #     fasta_out = n_clust_dir / 'cluster_{:02}.fasta'.format(cluster)
 
-            cluster_df = reference_df.loc[cluster]
+        #     cluster_df = reference_df.loc[cluster]
 
-            savePromoterFasta(ref_genome_seq, cluster_df, fasta_out)
+        #     savePromoterFasta(ref_genome_seq, cluster_df, fasta_out)
 
-            n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
-            n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
+        #     n_cluster_motif_dir = gimme_results / '{:02}_clusters'.format(num_clusters) / 'cluster_{:02}'.format(cluster)
+        #     n_cluster_motif_dir.mkdir(parents=True, exist_ok=True)
 
-            genome_path = proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna'
+        #     genome_path = proj_dir / 'NATL2A_genome_references' / 'onlyNATL2A.fna'
 
-            try:
-                gimme_motifs(str(fasta_out), str(n_cluster_motif_dir), params={"genome":str(genome_path)})
-            except:
-                pass
+        #     try:
+        #         gimme_motifs(str(fasta_out), str(n_cluster_motif_dir), params={"genome":str(genome_path)})
+        #     except:
+        #         pass
             
-            td = time.time() - start_time
-            print(f"cluster {cluster} finished of {num_clusters:02} in {td // 60} minutes")
+        #     td = time.time() - start_time
+        #     print(f"cluster {cluster} finished of {num_clusters:02} in {td // 60} minutes")
             
     
 
@@ -269,9 +301,10 @@ def savePromoterFasta(ref_seq, gff_df, fasta_outpath):
 
     SeqIO.write(yfr_seq_records, fasta_outpath, "fasta")
 
-proj_dir = Path(sys.argv[1])
+# proj_dir = Path(sys.argv[1])
 
-num_clusters = int(sys.argv[2])
+# num_clusters = int(sys.argv[2])
 
-main(proj_dir, num_clusters)
+for num_clusters in [9, 18, 39, 59]:
+    main(Path("/pool001/kve/2021_trained_diel_LFC_motif_search"), num_clusters)
 
