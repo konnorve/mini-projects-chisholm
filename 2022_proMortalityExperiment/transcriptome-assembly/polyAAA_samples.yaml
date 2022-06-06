@@ -1,0 +1,36 @@
+[
+  {
+    orientation: "fr",
+    type: "paired-end",
+    right reads: [
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0284_S135_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0291_S136_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0302_S137_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0309_S138_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0311_S139_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0313_S140_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0324_S141_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0326_S142_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0328_S143_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0333_S144_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0349_S145_L003_R1_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0351_S146_L003_R1_001.fastq.gz",
+    ],
+    left reads: [
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0284_S135_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0291_S136_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0302_S137_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0309_S138_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0311_S139_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0313_S140_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0324_S141_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0326_S142_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0328_S143_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0333_S144_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0349_S145_L003_R2_001.fastq.gz",
+      "/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z/SS0351_S146_L003_R2_001.fastq.gz",
+    ]
+  }
+]
+
+

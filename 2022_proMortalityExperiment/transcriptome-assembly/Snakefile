@@ -1,0 +1,51 @@
+# The main entry point of your workflow.
+# After configuring, running snakemake -n in a clone of this repository should successfully execute a dry-run of the workflow.
+
+transcriptome_dir = Path("/nfs/chisholmlab001/kve/2022_proMortalityExperiment/transcriptome_assembly/rnaSPAdes")
+
+output_path_dict = {
+    "trimmed_reads": transcriptome_dir / "trimmed_reads",
+    "concat_read_files": transcriptome_dir / "concatenated_reads",
+}
+
+        
+
+read_dir=Path("/nfs/chisholmlab001/chisholmlab/experiment_repository/2019/ProMo_transcriptomics/210921_SONYA_SHEEAN_21_MARINEALGALCOMMUNITY_RNA_STRDPOLYA_40M_PE100_NOVASEQ-20220216T172330Z")
+SAMPLES = glob_wildcards(read_dir / "{sample}_R1_001.fastq.gz").sample
+READS=[1,2]
+
+rule all:
+    input:
+        expand(output_path_dict["concat_read_files"] / "all_{read}_trimmed.fastq.gz", read=READS)
+
+rule run_trim_PE:
+    input:
+        r1 = read_dir / "{sample}_R1_001.fastq.gz",
+        r2 = read_dir / "{sample}_R2_001.fastq.gz",
+        ref = Path("/nfs/chisholmlab001/kve/genomic_resources/references/illumina/all_illumina_adapters.fa"),
+    output:
+        o1 = output_path_dict["trimmed_reads"] / "{sample}_1_trimmed.fastq.gz",
+        o2 = output_path_dict["trimmed_reads"] / "{sample}_2_trimmed.fastq.gz",
+    resources:
+        mem_mb=100000,
+    conda:
+        "envs/bbtools.yaml"
+    shell:
+        "bbduk.sh "
+        "in1={input.r1} in2={input.r2} "
+        "out1={output.o1} out2={output.o2} "
+        "minlen=25 qtrim=rl trimq=10 "
+        "ref={input.ref} ktrim=r k=23 mink=11 hdist=1"
+
+rule concat:
+    input:
+        expand(output_path_dict["trimmed_reads"] / "{sample}_{{read}}_trimmed.fastq.gz", sample=SAMPLES)
+    output:
+        output_path_dict["concat_read_files"] / "all_{read}_trimmed.fastq.gz"
+    resources:
+        mem_mb=100000,
+    shell:
+        """
+        echo {input}
+        cat {input} > {output}
+        """
