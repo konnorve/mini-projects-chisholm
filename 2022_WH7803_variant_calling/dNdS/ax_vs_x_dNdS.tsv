@@ -1,0 +1,4 @@
+genome_name	nonsynonymous	synonymous	N/A or Unknown	dN/dS
+WH7803xenic_bcftools_all	59	8	23	7.375
+WH7803xenic_bcftools_standard	58	8	24	7.25
+WH7803xenic_freebayes	58	12	2384	4.833333333333333

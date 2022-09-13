@@ -1,0 +1,11 @@
+name: biopython_install
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python
+  - pandas
+  - biopython
+  - pip:
+    - gffpandas

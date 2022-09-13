@@ -27,8 +27,6 @@
 
 source activate blast
 
-for file in /nfs/chisholmlab001/kve/2022_MIT9301_Diel_Experiment/internal_standard_check/comparison_seqs/*
-do
-    makeblastdb -in ${file}
-done
+cd /nfs/chisholmlab001/kve/2022_MIT9301_Diel_Experiment/internal_standard_check/MIT9301_seq_db/
 
+makeblastdb -in "MIT9301_IMG_2623620961.fna" -dbtype nucl -max_file_sz 4GB -out "MIT9301_IMG_2623620961_seq"

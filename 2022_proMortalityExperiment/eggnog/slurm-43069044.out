@@ -1,0 +1,4 @@
+bin_01
+slurmstepd: error: Job 43069044 exceeded memory limit (2376752 > 1024000), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 43069044 ON node119 CANCELLED AT 2022-06-29T17:39:24 ***

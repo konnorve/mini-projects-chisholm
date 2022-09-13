@@ -27,4 +27,4 @@
 
 source activate snakemake
 
-snakemake --cores all --resources mem_mb=250000 --use-conda --conda-frontend conda --rerun-incomplete
+snakemake --cores all --resources mem_mb=250000 --use-conda --conda-frontend conda --rerun-incomplete --unlock

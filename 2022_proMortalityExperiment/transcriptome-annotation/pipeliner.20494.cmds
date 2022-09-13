@@ -1,0 +1,1 @@
+/home/kve/bin/miniconda3/envs/transdecoder/opt/transdecoder/util/compute_base_probs.pl /nfs/chisholmlab001/kve/2022_proMortalityExperiment/transcriptome_assembly/transcriptome_qc/cd_hit_est_output/nr_transcriptome.fasta 0 > /nfs/chisholmlab001/kve/2022_proMortalityExperiment/transcriptome_assembly/transcriptome_annotation/transdecoder/base_freqs.dat
